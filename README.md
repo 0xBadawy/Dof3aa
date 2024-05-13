@@ -5,9 +5,17 @@
     <br>
     <H4>student platform to organize all materials</H4>
 
+    
+
+[![build](https://img.shields.io/github/actions/workflow/status/hydralauncher/hydra/build.yml)](https://github.com/hydralauncher/hydra/actions)
+[![release](https://img.shields.io/github/package-json/v/hydralauncher/hydra)](https://github.com/hydralauncher/hydra/releases)
+ 
+
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/0xBadawy/Dof3aa)
-![build status](https://github.com/pajecawav/ghloc-web/actions/workflows/ci.yml/badge.svg)
+<a href="https://0xbadawy.github.io/Dof3aa/Website/html/index.html" target="_blank">
+        <img alt="Static Badge" src="https://img.shields.io/badge/Online-Demo-4e6b99"></a>
 ![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fghloc.vercel.app%2Fapi%2F0xBadawy%2FDof3aa%2Fbadge&logoColor=red&label=lines%20of%20code%20&labelColor=green)
+
 
 
 <hr>
