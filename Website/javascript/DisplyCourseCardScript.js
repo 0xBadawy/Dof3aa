@@ -161,7 +161,7 @@ function LoadCoursesData(obj) {
   //  console.log(obj.cource);
   obj.forEach((element) => {
     const course = element.cource;
-    if (element.id == 1) {
+    if (course.type == 1) {
       countOfCourses++;
       createCardLecture(
         course.id,
@@ -173,7 +173,7 @@ function LoadCoursesData(obj) {
         "Last updated 3 mins ago",
         "main-course-div"
       );
-    } else if (element.id == 1) {
+    } else if (course.type == 2) {
       countOfSections++;
       createCardLecture(
         course.id,

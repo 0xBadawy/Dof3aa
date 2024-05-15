@@ -1,5 +1,9 @@
 // --------------------------------- get user data form DB ---------------------------------
 
+
+FeatchData();
+
+
 var domain = "https://localhost:44303/";
 function FeatchData() {
   var formData = new FormData();
@@ -12,7 +16,11 @@ function FeatchData() {
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
-        console.log("Course created successfully");
+        var eee = JSON.parse(xhr.responseText);
+
+        LoadProfileData(eee);
+        console.log("Course created *  successfully");
+        alert("sa")
       } else {
         console.log("Error creati ng course");
       }
@@ -24,15 +32,20 @@ function FeatchData() {
     console.log(xhr.responseText);
     // xhr.responseText to object
     var obj = JSON.parse(xhr.responseText);
-    console.log(obj);
-    console.log(obj.groups);
+    // console.log(obj);
+    // console.log(obj.groups);
     LoadProfileData(obj);
     LoadCoursesData(obj.groups);
+
+
+    
   };
 }
-FeatchData();
 
 function LoadProfileData(obj) {
+  alert("dsdsds")
+  console.log(" ************* ");
+  console.log(obj)
   document.getElementById("ProfileUserName").textContent = obj.userName;
   document.getElementById("ProfilePicNavBar").src = domain + obj.imageUrl;
   console.log(domain + obj.imageUrl);
@@ -114,10 +127,10 @@ var invalidfeedback = document.getElementById("invalid-id-feedback");
 checkCourseID.oninput = function () {
   var pa = checkCourseID.value;
 
-  if (pa.length < 4 || pa.length > 25) {
+  if (pa.length != 6) {
     validfeedback.innerHTML = "";
     invalidfeedback.innerHTML =
-      "The course ID length should be betweent 4 and 25";
+      "The course ID length should be 6 numbers";
     checkCourseID.classList.add("is-invalid");
     checkCourseID.classList.remove("is-valid");
   } else if (pa.search(/[ ]/) >= 0) {
@@ -139,8 +152,8 @@ checkCourseID.oninput = function () {
 };
 
 function TamamCourseID(id) {
-  if (id == "123") return true;
-  return false;
+ return true;
+  // false;
 }
 
 var checkCourseTitle = document.getElementById("courseTitleinput");
