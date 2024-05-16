@@ -9,6 +9,18 @@ function changee(inp) {
   userRole=inp;
 }
 // -------------------------------------------------------------------- user info ---------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 InfoUserOfAdmin();
 function InfoUserOfAdmin() {
   var formData = new FormData();

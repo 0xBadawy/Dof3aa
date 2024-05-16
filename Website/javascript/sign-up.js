@@ -130,7 +130,8 @@ FileImage.onchange = function () {
 };
 
 function submitForm() {
-  alert("submitForm");
+
+
 
   var firstName = document.getElementById("input-FirstName").value;
   var lastName = document.getElementById("input-LastName").value;
@@ -167,14 +168,12 @@ function submitForm() {
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
-        // Request was successful, handle the response
-       
-        // redirect to check-mail.html
-        window.location.href = "./check-mail.html";
+
         
-
-          console.log(xhr.responseText);
-
+        
+        
+        console.log(xhr.responseText);
+        
       } else {
         // There was an error with the request
         console.error("Request failed:", xhr.status);
@@ -185,10 +184,11 @@ function submitForm() {
   xhr.onload = function () {
     console.log(xhr.responseText);
   };
-
+  
   // convert formData data to json
-
+  
   xhr.send(formData);
+  window.open("http://127.0.0.1:5500/html/check-mail.html");
 }
 
 document.querySelector("form").addEventListener("submit", function (event) {
