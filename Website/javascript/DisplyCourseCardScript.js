@@ -6,7 +6,7 @@ function submitForm() {
   var xhr = new XMLHttpRequest();
 
   // Set up the request
-  xhr.open("GET", "https://localhost:44303/api/User/GetUserInfo", true);
+  xhr.open("GET", "http://dof3aa.runasp.net/api/User/GetUserInfo", true);
 
   // Check for errors and handle response
   xhr.onreadystatechange = function () {
@@ -120,11 +120,11 @@ function createCardLecture(
 
 // ------------------------------ load courses data ------------------------------
 
-var domain = "https://localhost:44303/";
+var domain = "http://dof3aa.runasp.net/";
 function FeatchData() {
   var formData = new FormData();
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://localhost:44303/api/User/GetUserInfo");
+  xhr.open("GET", "http://dof3aa.runasp.net/api/User/GetUserInfo");
   var token = "Bearer " + localStorage.getItem("token");
   xhr.setRequestHeader("Authorization", token);
 

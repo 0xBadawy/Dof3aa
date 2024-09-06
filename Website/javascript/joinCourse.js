@@ -77,7 +77,7 @@ function sendtodatabasse() {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "https://localhost:44303/api/Cource/Join?CourceId=" + allInputs,
+    "http://dof3aa.runasp.net/api/Cource/Join?CourceId=" + allInputs,
     true
   );
   var token = "Bearer " + localStorage.getItem("token");

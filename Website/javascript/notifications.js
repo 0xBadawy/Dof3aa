@@ -1,4 +1,4 @@
-var domain = "https://localhost:44303/";
+var domain = "http://dof3aa.runasp.net/";
 
 function GETrequest() {
   const Request = new XMLHttpRequest();
@@ -43,8 +43,7 @@ function appendNotification(parentId, mainTitle, date, user, imgSrc) {
   titleDiv.textContent = mainTitle;
   const descriptionDiv = document.createElement("div");
   descriptionDiv.classList.add("small");
-  descriptionDiv.textContent =
-    "By : " + user + " in : " + date.split("T")[0];
+  descriptionDiv.textContent = "By : " + user + " in : " + date.split("T")[0];
   contentDiv.appendChild(titleDiv);
   contentDiv.appendChild(descriptionDiv);
 
@@ -133,7 +132,7 @@ function convertDateToTimeAgo(date) {
 function FeatchNotifcation() {
   var formData = new FormData();
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://localhost:44303/api/Notification/GetNotifications");
+  xhr.open("GET", "http://dof3aa.runasp.net/api/Notification/GetNotifications");
   var token = "Bearer " + localStorage.getItem("token");
   xhr.setRequestHeader("Authorization", token);
 
@@ -185,7 +184,7 @@ function getImage() {
   var formData = new FormData();
 
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://localhost:44303/api/User/GetUserInfo");
+  xhr.open("GET", "http://dof3aa.runasp.net/api/User/GetUserInfo");
   var token = "Bearer " + localStorage.getItem("token");
   xhr.setRequestHeader("Authorization", token);
 

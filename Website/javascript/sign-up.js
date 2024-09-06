@@ -130,9 +130,6 @@ FileImage.onchange = function () {
 };
 
 function submitForm() {
-
-
-
   var firstName = document.getElementById("input-FirstName").value;
   var lastName = document.getElementById("input-LastName").value;
   var username = document.getElementById("input-UserName").value;
@@ -163,17 +160,12 @@ function submitForm() {
   var xhr = new XMLHttpRequest();
 
   // Set up the request
-  xhr.open("POST", "https://localhost:44303/api/User/Register", true);
+  xhr.open("POST", "http://dof3aa.runasp.net/api/User/Register", true);
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
-
-        
-        
-        
         console.log(xhr.responseText);
-        
       } else {
         // There was an error with the request
         console.error("Request failed:", xhr.status);
@@ -184,9 +176,9 @@ function submitForm() {
   xhr.onload = function () {
     console.log(xhr.responseText);
   };
-  
+
   // convert formData data to json
-  
+
   xhr.send(formData);
   window.open("http://127.0.0.1:5500/html/check-mail.html");
 }
@@ -236,7 +228,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
 });
 
 function sendDatatoServer(data) {
-  const url = "https://localhost:44303/api/User";
+  const url = "http://dof3aa.runasp.net/api/User";
 
   fetch(url, {
     method: "POST",

@@ -1,15 +1,13 @@
 // --------------------------------- get user data form DB ---------------------------------
 
-
 FeatchData();
 
-
-var domain = "https://localhost:44303/";
+var domain = "http://dof3aa.runasp.net/";
 function FeatchData() {
   var formData = new FormData();
 
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://localhost:44303/api/User/GetUserInfo");
+  xhr.open("GET", "http://dof3aa.runasp.net/api/User/GetUserInfo");
   var token = "Bearer " + localStorage.getItem("token");
   xhr.setRequestHeader("Authorization", token);
 
@@ -20,7 +18,7 @@ function FeatchData() {
 
         LoadProfileData(eee);
         console.log("Course created *  successfully");
-        alert("sa")
+        alert("sa");
       } else {
         console.log("Error creati ng course");
       }
@@ -36,16 +34,13 @@ function FeatchData() {
     // console.log(obj.groups);
     LoadProfileData(obj);
     LoadCoursesData(obj.groups);
-
-
-    
   };
 }
 
 function LoadProfileData(obj) {
-  alert("dsdsds")
+  alert("dsdsds");
   console.log(" ************* ");
-  console.log(obj)
+  console.log(obj);
   document.getElementById("ProfileUserName").textContent = obj.userName;
   document.getElementById("ProfilePicNavBar").src = domain + obj.imageUrl;
   console.log(domain + obj.imageUrl);
@@ -67,7 +62,7 @@ function LoadCoursesData(obj) {
         course.id,
         "ProfilePageMangeCourses"
       );
-    }else if (element.rule === 3) {
+    } else if (element.rule === 3) {
       const course = element.cource; // Access the course
       createCard(
         domain + course.image, // Assume domain as "https://example.com/"
@@ -77,11 +72,10 @@ function LoadCoursesData(obj) {
         "ProfilePageSupscribedCourses"
       );
     }
-
   });
 }
 
-function createCard(imgSrc, cardTitle, cardDescription, courseId,parant) {
+function createCard(imgSrc, cardTitle, cardDescription, courseId, parant) {
   const cardDiv = document.createElement("div");
   cardDiv.classList.add("col");
 
@@ -129,8 +123,7 @@ checkCourseID.oninput = function () {
 
   if (pa.length != 6) {
     validfeedback.innerHTML = "";
-    invalidfeedback.innerHTML =
-      "The course ID length should be 6 numbers";
+    invalidfeedback.innerHTML = "The course ID length should be 6 numbers";
     checkCourseID.classList.add("is-invalid");
     checkCourseID.classList.remove("is-valid");
   } else if (pa.search(/[ ]/) >= 0) {
@@ -152,7 +145,7 @@ checkCourseID.oninput = function () {
 };
 
 function TamamCourseID(id) {
- return true;
+  return true;
   // false;
 }
 
@@ -219,7 +212,7 @@ function createCourse() {
   formData.append("Logo", logo.files[0]);
 
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "https://localhost:44303/api/Cource/CreateCource");
+  xhr.open("POST", "http://dof3aa.runasp.net/api/Cource/CreateCource");
   var token = "Bearer " + localStorage.getItem("token");
   xhr.setRequestHeader("Authorization", token);
 

@@ -114,7 +114,6 @@ function createAddMatirialCard() {
   cardDiv.setAttribute("data-bs-target", "#staticBackdrop");
 }
 
-
 // console.log("martial s  " + martials);
 
 if (userRole === "admin") {
@@ -138,7 +137,7 @@ function SaveMaterial() {
   formData.append("TopicId", weekid);
 
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "https://localhost:44303/api/Topic/AddMaterial");
+  xhr.open("POST", "http://dof3aa.runasp.net/api/Topic/AddMaterial");
   var token = "Bearer " + localStorage.getItem("token");
   xhr.setRequestHeader("Authorization", token);
 
@@ -166,7 +165,7 @@ function FeatchData() {
   formData.append("Id", weekid);
 
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://localhost:44303/api/Topic/GetInfo?id=" + weekid);
+  xhr.open("GET", "http://dof3aa.runasp.net/api/Topic/GetInfo?id=" + weekid);
   var token = "Bearer " + localStorage.getItem("token");
   xhr.setRequestHeader("Authorization", token);
 
@@ -198,8 +197,8 @@ function LoadData(obj) {
       material.title,
       material.description,
       material.type,
-        material.saurce,
-        material.id
+      material.saurce,
+      material.id
     );
     console.log(" pp >> " + typeof material.type);
     //   console.log(material);

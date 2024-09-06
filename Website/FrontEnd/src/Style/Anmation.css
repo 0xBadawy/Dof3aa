@@ -1,0 +1,16 @@
+
+/* create anmation to apper an item on lading */
+@keyframes apper {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.LandElement {
+  animation: apper 0.7s ease-in-out;
+}

@@ -1,22 +1,18 @@
 var signout = document.getElementById("sign-out-nav");
 
 signout.onclick = function () {
-    localStorage.removeItem("token");
-    window.location.href = "login.html";
-    
-}
-
+  localStorage.removeItem("token");
+  window.location.href = "login.html";
+};
 
 FeatchData();
 
-
-
-var domain = "https://localhost:44303/";
+var domain = "http://dof3aa.runasp.net/";
 function FeatchData() {
   var formData = new FormData();
 
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://localhost:44303/api/User/GetUserInfo");
+  xhr.open("GET", "http://dof3aa.runasp.net/api/User/GetUserInfo");
   var token = "Bearer " + localStorage.getItem("token");
   xhr.setRequestHeader("Authorization", token);
 
@@ -45,6 +41,5 @@ function LoadProfileData(obj) {
   document.getElementById("ProfilePicNavBar").src = domain + obj.imageUrl;
   console.log(domain + obj.imageUrl);
 }
-
 
 // alert("hello");

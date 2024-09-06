@@ -2,7 +2,7 @@ function submitForm() {
   var xhr = new XMLHttpRequest();
 
   // Set up the request
-  xhr.open("GET", "https://localhost:44303/api/User/GetUserInfo", true);
+  xhr.open("GET", "http://dof3aa.runasp.net/api/User/GetUserInfo", true);
 
   // Check for errors and handle response
   xhr.onreadystatechange = function () {

@@ -24,7 +24,7 @@ function submitForm() {
   var xhr = new XMLHttpRequest();
 
   // Set up the request
-  xhr.open("POST", "https://localhost:44303/api/User/Login", true);
+  xhr.open("POST", "http://dof3aa.runasp.net/api/User/Login", true);
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {

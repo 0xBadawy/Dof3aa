@@ -1,25 +1,14 @@
 var urlParams = new URLSearchParams(window.location.search);
 var id = urlParams.get("id");
 var courseIdforcrearte = urlParams.get("id");
-var domain = "https://localhost:44303/";
+var domain = "http://dof3aa.runasp.net/";
 
 //test varables
 
 function changee(inp) {
-  userRole=inp;
+  userRole = inp;
 }
 // -------------------------------------------------------------------- user info ---------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
 
 InfoUserOfAdmin();
 function InfoUserOfAdmin() {
@@ -29,7 +18,7 @@ function InfoUserOfAdmin() {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "https://localhost:44303/api/User/GetRoles?CourceId=" + courseIdforcrearte
+    "http://dof3aa.runasp.net/api/User/GetRoles?CourceId=" + courseIdforcrearte
   );
 
   var token = "Bearer " + localStorage.getItem("token");
@@ -50,10 +39,8 @@ function InfoUserOfAdmin() {
     var obj = JSON.parse(xhr.responseText);
     let Data = obj;
     userRole(Data);
-   
   };
 }
-
 
 function createWeeksCard(imgSrc, weekName, doctorName, lastUpdate, weekid) {
   const cardDiv = document.createElement("div");
@@ -341,7 +328,7 @@ function CreateTask() {
       courseIdforcrearte
   );
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "https://localhost:44303/api/Task/Create");
+  xhr.open("POST", "http://dof3aa.runasp.net/api/Task/Create");
   var token = "Bearer " + localStorage.getItem("token");
   xhr.setRequestHeader("Authorization", token);
 
@@ -370,7 +357,7 @@ function FeatchTask() {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "https://localhost:44303/api/Task/GetAll?CourceId=" +
+    "http://dof3aa.runasp.net/api/Task/GetAll?CourceId=" +
       courseIdforcrearte +
       ""
   );
@@ -481,7 +468,7 @@ function FeatchAnnouncement() {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "https://localhost:44303/api/Announcement/GetAll?CourceId=" +
+    "http://dof3aa.runasp.net/api/Announcement/GetAll?CourceId=" +
       courseIdforcrearte
   );
   var token = "Bearer " + localStorage.getItem("token");
@@ -537,7 +524,7 @@ function CreateAnnounce() {
   formData.append("CourceId", courseIdforcrearte);
 
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "https://localhost:44303/api/Announcement/Create");
+  xhr.open("POST", "http://dof3aa.runasp.net/api/Announcement/Create");
   var token = "Bearer " + localStorage.getItem("token");
   xhr.setRequestHeader("Authorization", token);
 
@@ -571,7 +558,7 @@ function GroupInfo() {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "https://localhost:44303/api/Cource/GetInfo?CourceId=" + courseIdforcrearte
+    "http://dof3aa.runasp.net/api/Cource/GetInfo?CourceId=" + courseIdforcrearte
   );
   var token = "Bearer " + localStorage.getItem("token");
   xhr.setRequestHeader("Authorization", token);
@@ -627,7 +614,7 @@ function SaveWeekInDB() {
   formData.append("Image", image.files[0]);
 
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "https://localhost:44303/api/Topic/Create");
+  xhr.open("POST", "http://dof3aa.runasp.net/api/Topic/Create");
   var token = "Bearer " + localStorage.getItem("token");
   xhr.setRequestHeader("Authorization", token);
 
@@ -659,7 +646,7 @@ function FeatchWeeks() {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "POST",
-    "https://localhost:44303/api/Topic/GetAll?id=" + courseIdforcrearte
+    "http://dof3aa.runasp.net/api/Topic/GetAll?id=" + courseIdforcrearte
   );
 
   var token = "Bearer " + localStorage.getItem("token");
@@ -697,7 +684,6 @@ function PrintWeeks(obj) {
     console.log("Weeks: " + domain + notification.image);
   });
 }
-
 
 function userRole(userRole) {
   if (userRole == 1 || userRole == 2) {
